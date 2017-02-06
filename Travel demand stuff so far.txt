@@ -33,6 +33,9 @@ TUTORIAL #5 (Feature selection, yung para malaman kung aling attributes yung gag
 TUTORIAL #6 (Complicated terms in regression analysis explained, video series to 1-3 ata)
 >https://www.youtube.com/watch?v=aq8VU5KLmkY
 
+TUTORIAL #7 (Another tutorial on regression modeling, tutorial and examples)
+>http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-tutorial-and-examples
+
 #########################################
 #             SUPPLEMENTS		        #
 #########################################
