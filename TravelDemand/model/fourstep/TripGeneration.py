@@ -28,13 +28,12 @@ class TripGeneration:
         length_rows = sub_table.shape(0)
 
         for x in (0, length_rows):
-            row_values = sub_table.iloc[x,:].values
+            row_values = sub_table.iloc[x, :].values
             production_score += self.production_constant
             for j in row_values:
                 production_score += row_values[j]*self.production_intercepts[j]
 
         return production_score
-
 
     # get trip attraction score for 'zone'
     def getTripAttractionScore(self, zone):
@@ -47,7 +46,7 @@ class TripGeneration:
         length_rows = sub_table.shape(0)
 
         for x in (0, length_rows):
-            row_values = sub_table.iloc[x,:].values
+            row_values = sub_table.iloc[x, :].values
             attraction_score += self.attraction_constant
             for j in row_values:
                 attraction_score += row_values[j]*self.attraction_intercepts[j]

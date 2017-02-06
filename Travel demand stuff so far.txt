@@ -1,0 +1,65 @@
+#View niyo under sublime para cool tignan hahahahaha :))
+
+GIT REPO: https://github.com/XGBXGB/Via_Travel_Demand
+
+
+
+
+#########################################
+# DOING REGRESSION IN PYTHON TUTORIALS: #
+#########################################
+
+TUTORIAL #1 (Python Notebook based, No model validation step, comprehensive siya parang walkthrough :D)
+>https://github.com/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb
+
+TUTORIAL #2 (Slides to, lecture style siya, diniscuss yung basics, less comprehensive yung code segments)
+>http://www.slideshare.net/EricMarsden1/regression-analysis-using-python
+
+TUTORIAL #3 (Article with code segments,  comprehensive din, pero baka ma overwhelm sa info since
+			madami siya na touch na stat stuff, like kung pano makukuha yung t-stat, standard error,
+			confidence interval etc. ng isang regression model)
+>http://connor-johnson.com/2014/02/18/linear-regression-with-python/
+
+TUTORIAL #4 (Article with code segments sa dulo, naglecture muna siya then nagdiscuss about code sa dulo,
+			 difference is, meron siyang ginamit na api (Quandl) na nagpprovide ng dummy data para dun gagawin yung regression analysis)
+>http://www.turingfinance.com/regression-analysis-using-python-statsmodels-and-quandl/
+
+
+
+#########################################
+#             SUPPLEMENTS		        #
+#########################################
+
+SUPPLEMENT #1 (Cool method about cross validation, pero di ko pa alam pano makukuha error rate 
+			   ng isang regression model)
+>https://www.youtube.com/watch?v=hihuMBCuSlU
+
+SUPPLEMENT #2 (Opinions/comments from people on how to validate predictive models)
+>https://www.researchgate.net/post/What_are_the_different_ways_of_performing_validation_of_prediction_model
+
+SUPPLEMENT #3 (Opinions/comments din from people on evaluating results of linear regression.
+			   May nagbanggit about confidence interval, so pedeng reference dito yung TUTORIAL #3 :D)
+>http://stats.stackexchange.com/questions/43310/how-to-evaluate-results-of-linear-regression
+
+SUPPLEMENT #4 (Page to download a textbook in pdf form about statistical learning)
+>http://www-bcf.usc.edu/~gareth/ISL/
+
+SUPPLEMENT #5 (CODING SUPPLEMENT, About sa paggamit nung panda library, about dataframes)
+>http://pandas.pydata.org/pandas-docs/stable/10min.html
+>http://pandas.pydata.org/pandas-docs/stable/indexing.html
+>http://www.datacarpentry.org/python-ecology-lesson/02-index-slice-subset/
+>http://chrisalbon.com/python/pandas_indexing_selecting.html
+
+
+
+#########################################
+#       CURRENT CONCERNS/PROBLEMS   	#
+#########################################
+
+>Is cross validation applicable to regression models?
+>What are other ways to validate regression models?
+>How to choose the best parameters for regression modeling?
+    >Is R^2 a good basis for checking collinearity between parameters?
+    >Is R^2 also a good basis for checking of how fit a model is?
+>Is there an alternative way to predict the trips without using the estimated number of trips from MUCEP, and justpurely using the socio-economic values
+>FEEL FREE TO ADD MORE, ITO DIN YUNG ITATANONG NATING SIGURO KAY SIR ROBERT?
