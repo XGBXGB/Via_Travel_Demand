@@ -24,7 +24,14 @@ TUTORIAL #4 (Article with code segments sa dulo, naglecture muna siya then nagdi
 			 difference is, meron siyang ginamit na api (Quandl) na nagpprovide ng dummy data para dun gagawin yung regression analysis)
 >http://www.turingfinance.com/regression-analysis-using-python-statsmodels-and-quandl/
 
+TUTORIAL #4 (More tutorial! Based sa nakita ko madami siyang nadiscuss. "Beginner's guide to Regression Analysis in Python")
+>https://www.linkedin.com/pulse/beginners-guide-regression-analysis-python-dhwaj-raj?articleId=9211937872905257728
 
+TUTORIAL #5 (Feature selection, yung para malaman kung aling attributes yung gagamitin natin sa regression analysis)
+>http://machinelearningmastery.com/feature-selection-machine-learning-python/
+
+TUTORIAL #6 (Complicated terms in regression analysis explained, video series to 1-3 ata)
+>https://www.youtube.com/watch?v=aq8VU5KLmkY
 
 #########################################
 #             SUPPLEMENTS		        #
@@ -59,6 +66,7 @@ SUPPLEMENT #5 (CODING SUPPLEMENT, About sa paggamit nung panda library, about da
 >Is cross validation applicable to regression models?
 >What are other ways to validate regression models?
 >How to choose the best parameters for regression modeling?
+	>We are trying to go with Recursive Feature Elimination from the sklearn library
     >Is R^2 a good basis for checking collinearity between parameters?
     >Is R^2 also a good basis for checking of how fit a model is?
 >Is there an alternative way to predict the trips without using the estimated number of trips from MUCEP, and justpurely using the socio-economic values
