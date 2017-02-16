@@ -74,3 +74,8 @@ SUPPLEMENT #5 (CODING SUPPLEMENT, About sa paggamit nung panda library, about da
     >Is R^2 also a good basis for checking of how fit a model is?
 >Is there an alternative way to predict the trips without using the estimated number of trips from MUCEP, and justpurely using the socio-economic values
 >FEEL FREE TO ADD MORE, ITO DIN YUNG ITATANONG NATING SIGURO KAY SIR ROBERT?
+
+
+
+
+>

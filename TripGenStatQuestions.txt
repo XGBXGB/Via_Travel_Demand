@@ -1,0 +1,13 @@
+-if it is possible to derive travel demand without the household surveys and just the cbms data.
+
+-what method to use on attribute selection? Preference? Best practice?
+
+-Is RFECV still useful in making a specific model, when I want some attributes fixed, or like when it chooses to not include
+an attribute that I want included?
+-Should we include the dummy variables during RFECV?
+
+-Is it enough to just count the amenities of different sorts in the zones to know how it affects travel demand?
+-Planning to use amenity data, and generate a population estimate based on area and floors
+
+-What's the best way to validate a model like this?
+-about sa sinabi dati na hindi masyadong important yung kung gano kaexact yung(coefficients?) kasi hindi naman namin pinoprobe yung relationships?

@@ -1,0 +1,33 @@
+Disappointed na hindi sure sa mga parts na nasa docu
+
+- kela shaila -> attrib -> misunderstanding kasi feature ni tere and presented wrong.
+- hindi dapat gnun
+- if not sure how to design or implement, bakit hindi nagraise ng question.
+- mas malaking problem pag di nakadefine sa docu
+- UI concern
+	- nakita na karamihan nung nafinalize
+	- ung iba unsure kung andun
+	- plexus na menu na dropdown
+		- unnatural na menu
+	- keep the data tab and analysis tab
+	- hindi pare pareho understanding sa left sidebar
+		- list ng datasets
+		- sorted based on category ng datasets
+		- kelangan ko ba makita yung data ng lahat ng datasets? Eh kung TAZ lang gusto ko imanage?
+		- pagclick ng TAZ, may pop-up na ano name nung TAZ dataset na yun
+			>search or skip initial data set
+		- ask nadin kung uupload ng initial data na imamanage dun sa popup
+		- pag analysis meron kang right, otherwise wala
+	- whole point: lahat ng data na management dapat magamit ng lahat
+	- pwede ko ba isave ung mga analysis? oo dapat
+	- sa analysis, idedefine mo sa left yung data sets
+		- dropdown or filechooser
+		- nakadefine lang depende sa run na gusto ko
+		- labels lang siguro sa left tapos lahat ng mga gagamitin mo, nakadisplay doon
+	- right results ng analysis
+		- single and 2 selects lang hindi yung madami
+	- define yung pinakaflow
+- pagclick ng data, pwede din na click TAZ sa dropdown tapos iaaask kana kung anong dataset ggmitin
+- pwede tab sa chrome ang gagawin everytime mag new data and new analysis
+
+<name><what type of dataset><json>
