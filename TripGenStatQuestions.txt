@@ -1,7 +1,15 @@
 -if it is possible to derive travel demand without the household surveys and just the cbms data.
+>Usual attributes that are used for generating travel demand are:
+Househohold income, enrollment/employment (for attraction), car ownership, # of hh members 
+>will the model be valid if i trained it using the MUCEP data, and then used it on the cbms data?
+>Then, after validation, what if the trend changes? What will be a way to handle this?
+
 
 -what method to use on attribute selection? Preference? Best practice?
 
+-when will R^2 only be useful, when using RFECV, what can be useful to evaluate the estimator? R^2? Sum of neg squares, etc?
+
+http://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter -> if we use neg_mean_square will that be better than R^2 measure?
 -Is RFECV still useful in making a specific model, when I want some attributes fixed, or like when it chooses to not include
 an attribute that I want included?
 -Should we include the dummy variables during RFECV?
@@ -10,4 +18,9 @@ an attribute that I want included?
 -Planning to use amenity data, and generate a population estimate based on area and floors
 
 -What's the best way to validate a model like this?
--about sa sinabi dati na hindi masyadong important yung kung gano kaexact yung(coefficients?) kasi hindi naman namin pinoprobe yung relationships?
+-Also, about sa sinabi dati na hindi masyadong important yung kung gano kaexact yung(coefficients?) kasi hindi naman namin pinoprobe yung relationships?
+
+-Anything that we need to note when forming our polynomial regression model?
+
+
+*NOTES*
