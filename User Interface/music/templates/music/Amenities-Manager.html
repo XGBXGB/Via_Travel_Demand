@@ -407,6 +407,12 @@
 
     <script>
         
+        
+        var markers = {}; //will contain the amenities
+        var names = {}; //will contain the amenities
+        var capacities = {}; //will contain the amenities
+
+        
         function copyToClipboard(text) {
           window.prompt("Copy Lat/Long values to clipboard: Ctrl+C, Enter", text);
         }
@@ -416,23 +422,11 @@
           }
         
         function save() {
-            document.getElementById('init-div').innerHTML = document.getElementById('summary-div').innerHTML;
-        
             //save shit here
-            map.on('draw:created', function (e) {
-            var type = e.layerType,
-                layer = e.layer;
-                
-                alert("WOOH");
-                
-            //save the content here
-
-            //document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
-            //document.getElementById('a-lat').value = layer.getLatLng().lat;
-            //document.getElementById('a-long').value = layer.getLatLng().lng;
+            names["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-name').value;
+            capacities["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-capacity').value;
             
-            editableLayers.addLayer(layer);
-            });
+            document.getElementById('init-div').innerHTML = document.getElementById('summary-div').innerHTML;            
         }
         
         /******************************* MAP *************************************/
@@ -452,7 +446,6 @@
 
         /******************** EDIT STUFF ****************************/
         
-
     var editableLayers = new L.FeatureGroup();
     map.addLayer(editableLayers);
 
@@ -493,9 +486,14 @@
         document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
         document.getElementById('a-lat').value = layer.getLatLng().lat;
         document.getElementById('a-long').value = layer.getLatLng().lng;
+        markers["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().long+")"] = e;
+        //names[layer.getLatLng()] = document.getElementById('a-name').value;
+        //capacities[layer.getLatLng()] = document.getElementById('a-capacity').value;
+        //document.getElementById('a-capacity').value = capacities[layer.getLatLng()];
+        //document.getElementById('a-name').value = names[layer.getLatLng()];
 
         if (type === 'marker') {
-            //layer.bindPopup('LatLng: ' + layer.getLatLng().lat).openPopup();
+            layer.bindPopup(layer.getLatLng().toString()).openPopup();
             layer.on('click', function () {
                 //Write code to adjust the icon
                 //layer.icon = someNewIcon;
@@ -504,6 +502,9 @@
                 document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
                 document.getElementById('a-lat').value = layer.getLatLng().lat;
                 document.getElementById('a-long').value = layer.getLatLng().lng;
+                document.getElementById('a-capacity').value = capacities["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"];
+                document.getElementById('a-name').value = names["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"];
+                
             });
         }
 
