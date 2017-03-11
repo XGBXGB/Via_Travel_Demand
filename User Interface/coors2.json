@@ -1,0 +1,411 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2016-10-09T17:48:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/24815678",
+      "properties": {
+        "@id": "node/24815678",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Kamakura Japanese Restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.995001,
+          14.5532842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4187327484",
+      "properties": {
+        "@id": "node/4187327484",
+        "amenity": "restaurant",
+        "capacity": "50",
+        "cuisine": "chinese",
+        "delivery": "yes",
+        "name": "QuikSnack",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9755307,
+          14.5997244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4214136800",
+      "properties": {
+        "@id": "node/4214136800",
+        "addr:housenumber": "Manila 0",
+        "addr:street": "Severino Reyes",
+        "amenity": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.98071,
+          14.610921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4214169289",
+      "properties": {
+        "@id": "node/4214169289",
+        "addr:housenumber": "Manila 0",
+        "addr:street": "Severino Reyes",
+        "amenity": "restaurant",
+        "name": "Red Baron"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9807107,
+          14.6109406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4214872895",
+      "properties": {
+        "@id": "node/4214872895",
+        "addr:housenumber": "0",
+        "addr:street": "Tomas Mapua St. Sta Cruz, Manila",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Hap Chan Tea House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9798386,
+          14.6013614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4215115798",
+      "properties": {
+        "@id": "node/4215115798",
+        "addr:city": "Manila",
+        "addr:street": "Ronquillo",
+        "amenity": "restaurant",
+        "cuisine": "philippine",
+        "name": "Ramon Lee Panciteria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9808375,
+          14.6002593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4215409190",
+      "properties": {
+        "@id": "node/4215409190",
+        "addr:housenumber": "0",
+        "addr:street": "Ongpin St. Sta Cruz, Manila",
+        "amenity": "restaurant",
+        "name": "Maniosa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9788709,
+          14.6012925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4217329389",
+      "properties": {
+        "@id": "node/4217329389",
+        "addr:housenumber": "0",
+        "addr:street": "Valeriano Fugoso St. Sta Cruz, Manila",
+        "amenity": "restaurant",
+        "name": "Mae~San"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9829946,
+          14.6077438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4220583389",
+      "properties": {
+        "@id": "node/4220583389",
+        "amenity": "restaurant",
+        "name": "Shakey's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0190095,
+          14.5569738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4227465189",
+      "properties": {
+        "@id": "node/4227465189",
+        "addr:street": "Roxas Boulevard",
+        "amenity": "restaurant",
+        "cuisine": "filipino",
+        "name": "Manila Yacht Club"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9853839,
+          14.5622871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4233149651",
+      "properties": {
+        "@id": "node/4233149651",
+        "addr:city": "Makati",
+        "amenity": "restaurant",
+        "cuisine": "pares",
+        "name": "EAE Pares",
+        "opening_hours": "0000-0000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0173056,
+          14.5715201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4240255999",
+      "properties": {
+        "@id": "node/4240255999",
+        "amenity": "restaurant",
+        "cuisine": "filipino",
+        "name": "Bai"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9940922,
+          14.5660686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4242250489",
+      "properties": {
+        "@id": "node/4242250489",
+        "addr:housenumber": "Manila 0",
+        "addr:street": "Oroquieta",
+        "amenity": "restaurant",
+        "name": "Barok's Ihawan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.98337,
+          14.611104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4266226902",
+      "properties": {
+        "@id": "node/4266226902",
+        "amenity": "restaurant",
+        "name": "Su Zhou "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.984407,
+          14.5711473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4266243394",
+      "properties": {
+        "@id": "node/4266243394",
+        "amenity": "restaurant",
+        "name": "Su Zhou"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9771577,
+          14.6008825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4266251890",
+      "properties": {
+        "@id": "node/4266251890",
+        "amenity": "restaurant",
+        "name": "Estero "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.976787,
+          14.601563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4270047295",
+      "properties": {
+        "@id": "node/4270047295",
+        "addr:street": "Dapitan",
+        "amenity": "restaurant",
+        "name": "Dimsum Treats"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.987003,
+          14.6105725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4279239802",
+      "properties": {
+        "@id": "node/4279239802",
+        "amenity": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9865523,
+          14.5484757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4281399190",
+      "properties": {
+        "@id": "node/4281399190",
+        "amenity": "restaurant",
+        "name": "HATSU HANA TEI  はつはな亭"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0135843,
+          14.5537715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4281425002",
+      "properties": {
+        "@id": "node/4281425002",
+        "addr:postcode": "1006",
+        "addr:street": "Sabino Padilla",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Ang Tunay Beef House",
+        "opening_hours": "Mo-Fr 09:00-22:00, Sa-Su 09:00-12:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9771651,
+          14.6010408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4289990890",
+      "properties": {
+        "@id": "node/4289990890",
+        "amenity": "restaurant",
+        "name": "Manoy And Cucuz Panciteria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.016575,
+          14.569475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4297382491",
+      "properties": {
+        "@id": "node/4297382491",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "internet_access": "wlan",
+        "name": "Jam & Viet Sandwich House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0031551,
+          14.5634436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4297391290",
+      "properties": {
+        "@id": "node/4297391290",
+        "amenity": "restaurant",
+        "cuisine": "filipino",
+        "internet_access": "wlan",
+        "name": "Nids Balot",
+        "website": "http://www.nidsbalot.wix.com/home"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9848385,
+          14.5695633
+        ]
+      }
+    }
+  ]
+}

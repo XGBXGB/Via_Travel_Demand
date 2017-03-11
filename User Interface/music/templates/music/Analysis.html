@@ -1,0 +1,478 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VIA - Amenities Manager</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/personalized.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize/css/materialize.min.css' %}" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.0/leaflet.draw.css"/>
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
+
+        <script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.0/leaflet.draw.js"></script>
+        <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+        <script src="{% static 'leaflet/heatmap.js' %}"></script>
+        <script src="{% static 'leaflet/leaflet-heatmap.js' %}"></script>
+    </head>
+  
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'css/materialize/js/materialize.min.js' %}"></script>
+     
+
+        <div id="file-modal" class="modal medium-modal">
+            <div class = "modal-content file-select-table ">
+                <table class = "bordered highlight">
+                    <thead>
+                      <tr>
+                          <th data-field="id">Name</th>
+                          <th data-field="name">Date Modified</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Amenities-1</td>
+                        <td>March 3, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-2</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-3</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-Valenzuela</td>
+                        <td>January 31, 2017</td>
+                      </tr>
+                        <tr>
+                        <td>Amenities-1</td>
+                        <td>March 3, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-2</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-3</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-Valenzuela</td>
+                        <td>January 31, 2017</td>
+                      </tr><tr>
+                        <td>Amenities-1</td>
+                        <td>March 3, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-2</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-3</td>
+                        <td>March 1, 2017</td>
+                      </tr>
+                      <tr>
+                        <td>Amenities-Valenzuela</td>
+                        <td>January 31, 2017</td>
+                      </tr>
+                    </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button class="modal-action modal-close waves-effect waves-green btn-flat active-btn">Add</button>
+            </div>
+        </div>
+
+        
+          <!--div id="file-modal" class="modal medium-modal">
+            <div class="modal-content left-align">
+              <h5>
+                <i class="material-icons medium green-text text-accent-4 left">done</i>
+                Changes successfully saved!
+              </h5>
+            </div>
+            <div class="modal-footer">
+              <button class="modal-action modal-close waves-effect waves-green btn-flat active-btn">Ok</button>
+            </div>
+          </div-->
+        
+        <ul id="dropdownData" class="dropdown-content row">
+            <li><a href="#!">Amenities</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Households</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Land Use</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Roads</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Routes</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Stops</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">TAZ</a></li>  
+        </ul>
+     
+        <ul id="dropdownAna" class="dropdown-content row">
+            <li><a href="#!">Passenger Dispersion</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Road Network</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Robustness</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Route Measure Capacity</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Stop Network</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Transport Network</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Travel Demand</a></li>
+        </ul>
+
+     
+        <nav>
+            <div class="nav-wrapper row" style = "background-color: black !important">
+                <a href="#!" class="brand-logo col s2 left" style="margin-left: 40px !important;">Plexus</a>
+                <ul class="hide-on-med-and-down col s10 right">
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdownData">Data<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdownAna">Analysis<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row file-title-row">
+                <form class="input-field col s6 input-file-name">
+                    <input type="text" style = "border-bottom: 0 !important;" value="TravelDemand-Valenzuela">
+                </form>
+                <!--div class="right col s1">&nbsp;</div-->
+                <a class="light-green btn right col s1" style="font-size: 12px !important; margin-left:18px !important;">Save</a>
+            </div>
+        <div class="body-content row">
+            <div class = "side-nav-bg col s2" style="padding:0 !important;margin:0 !important;">
+                <form class = "row">
+                    <div class="row content-fields" style="margin-top: 20px;">
+                        <div class="row field-element">
+                            <div class="row input-field col s12">
+                                <ul class="collection with-header">
+                                    <li class="collection-header"><h4 class = "font-twenty">Amenities</h4></li>
+                                    <li class="collection-item">Amenities-1</li>
+                                    <li class="collection-item">Amenities-Valenzuela</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row field-element">
+                            <div class="row input-field col s12">
+                                <ul class="collection with-header">
+                                    <li class="collection-header"><h4 class = "font-twenty">Households</h4></li>
+                                    <li class="collection-item">HH-1</li>
+                                    <li class="collection-item">HH-2</li>
+                                    <li class="collection-item">HH-Valenzuela</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row field-element">
+                            <div class="row input-field col s12">
+                                <ul class="collection with-header">
+                                    <li class="collection-header"><h4 class = "font-twenty">Land Use</h4></li>
+                                    <li class="collection-item">LU-Valenzuela</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row field-element">
+                            <div class="row input-field col s12">
+                                <ul class="collection with-header">
+                                    <li class="collection-header"><h4 class = "font-twenty">Traffic Zones</h4></li>
+                                    <li class="collection-item">TAZ-Val</li>
+                                    <li class="collection-item">TAZ-Valenzuela</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>  
+            </div>
+            <!--div class = "map-bg col s8">
+            </div-->
+            
+            <div id="mapid" class="col s8 main-bg"></div>
+            
+            <div class = "side-nav-bg col s2">
+                <div id="runanalysis" class="row" style="margin-top:20px; margin-bottom:20px !important;">
+                        <a class="light-green btn col s10" style="font-size: 14px !important; margin-left:18px !important;">Run Analysis</a>
+                </div>
+                <div class="row">
+                  <div>
+                    <ul class="tabs" style="font-size:10px;width:100px !important;overflow-x: hidden !important;">
+                      <li class="tab col s3 custom-tab"><a class="active" href="#inbox">Summary</a></li>
+                      <li class="tab col s3 custom-tab"><a href="#unread">Details</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row" id = "inbox" >
+                    <div class="row" style="margin-bottom:10px !important;">
+                        <div class = "col s1">
+                            &nbsp;
+                        </div>
+                        <table class = "left-summary-table bordered col s10">
+                            <tbody>
+                              <tr>
+                                <td>Amenities</td>
+                                <td>89,103</td>
+                              </tr>
+                              <tr>
+                                <td>Land Use</td>
+                                <td>1,702</td>
+                              </tr>
+                              <tr>
+                                <td>Population</td>
+                                <td>999,425</td>
+                              </tr>
+                              <tr>
+                                <td>Traffic Analysis Zones</td>
+                                <td>27</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="row">
+                        <p class="filters-header">Filters</p>
+
+                        <p class="modes-header">Types of trips</p>                    
+                        <div class = "trips-checkboxes">
+                            <form action="#">
+                                <input type="checkbox" id="test5" class="chk"/>
+                                <label class = "checkbox-style" for="test5" style="padding-left:20px;padding-right:20px"> Trips Generated </label>
+                                <input type="checkbox" id="test6" />
+                                <label for="test6"  class = "checkbox-style" style="padding-left:20px;padding-right:20px"> Trips Attracted</label>
+                            </form>
+                        </div>
+
+                        <p class="modes-header">Modes of transportation</p>
+
+                        <div  class = "trips-checkboxes">
+                            <form action="#">
+                                <input type="checkbox" id="test1" />
+                                <label for="test1" class = "checkbox-style" style="padding-left:20px;padding-right:20px">Jeep</label>
+                                <input type="checkbox" id="test2"/>
+                                <label for="test2" class = "checkbox-style" style="padding-left:20px;padding-right:20px">Bus</label>
+                            </form>
+                        </div>
+                    </div>                 
+                </div>
+                <div class="row" id="unread">
+                    <div class = "col s1">
+                        &nbsp;
+                    </div>
+                    <table class = "left-summary-table bordered col s10" style="height:350px !important; overflow-y:scroll !important;">
+                        <thead>
+                          <tr>
+                              <th data-field="id">Zone 1</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Amenities</td>
+                            <td>89,103</td>
+                          </tr>
+                          <tr>
+                            <td>Land Use</td>
+                            <td>1,702</td>
+                          </tr>
+                          <tr>
+                            <td>Population</td>
+                            <td>999,425</td>
+                          </tr>
+                          <tr>
+                            <td>Traffic Analysis Zones</td>
+                            <td>27</td>
+                          </tr>
+                          <tr>
+                            <td>Total Trips Produced</td>
+                            <td>27,000</td>
+                          </tr>
+                          <tr>
+                            <td>Total Trips Attracted</td>
+                            <td>27,000</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+                
+                
+                
+                
+                
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+<!----------------------------------------------------- SCRIPTS ------------------------------------------->
+
+<script type="text/javascript">
+          $("#runanalysis").click(function(){
+
+            $("#file-modal").openModal({
+                ready: function(){
+
+                },
+                complete: function(){
+
+                }
+            });
+        });
+    
+        var originalContent;
+
+        function showModify(){
+          originalContent = $('#side-nav-holder').html();
+          var modifyContent = $('#modify-content').html()
+          $('#side-nav-holder').fadeOut('slow', function() {
+              $('#side-nav-holder').replaceWith("<div id='side-nav-holder' class='side-nav-bg col s3' style='display:none'>" + modifyContent + "</div>");
+              $('#side-nav-holder').fadeIn('slow');
+          });
+        }
+
+        function showOriginal(){
+          $('#side-nav-holder').fadeOut('slow', function() {
+              $('#side-nav-holder').replaceWith("<div id='side-nav-holder' class='side-nav-bg col s3' style='display:none'>" + originalContent + "</div>");
+              $('#side-nav-holder').fadeIn('slow');
+          });
+        }
+
+
+        function copyToClipboard(text) {
+          window.prompt("Copy Lat/Long values to clipboard: Ctrl+C, Enter", text);
+        }
+
+        function addAmenity(){
+          $('#amenity-tbody').append('<tr><td><input placeholder="Placeholder" type="text" style="height:auto !important; font-size:11px !important;text-align: center"></td><td><input placeholder="Placeholder" type="text" style="height:auto !important; font-size:11px !important;text-align: center"></td><td><input placeholder="Placeholder" type="text" style="height:auto !important; font-size:11px !important;text-align: center"></td><td><input placeholder="Placeholder" type="text" style="height:auto !important; font-size:11px !important;text-align: center"></td></tr>');
+
+          var mydiv = $("#amenity-tbody");
+          mydiv.scrollTop(mydiv.prop("scrollHeight"));
+        }
+
+    
+        /******************************* MAP *************************************/
+        
+        var mymap = L.map('mapid', {editable: true}).setView([14.5995, 120.9842], 15);
+
+        /*mymap.on('click', function(e) {
+            copyToClipboard(e.latlng.lat + ", " + e.latlng.lng);
+        });*/
+        
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'xgb7.1jd5j7o2',
+            accessToken: 'pk.eyJ1IjoieGdiNyIsImEiOiJjaXR6dGgxaHEwZnJjMm9vODRjbXk2NTczIn0.JGHOHRx1UpItrRAG1B0Fyw'
+        }).addTo(mymap);
+
+    /************** HEAT MAP ************************/
+    
+    
+            // don't forget to include leaflet-heatmap.js
+        var quakePoints = [{lat: 14.600943832220155, lng:120.97576087340713, count: 3},{lat: 14.600435096555684, lng:120.975734051317, count: 1},{lat: 14.600243022580464, lng:120.97485428676009, count: 3} ]
+        ;
+
+    
+    /************************ EDIT SUTFF ****************/
+    
+        
+    var amenities = new L.LayerGroup();
+    var drawnItems = new L.FeatureGroup();
+    drawnItems.addLayer(amenities);
+    mymap.addLayer(drawnItems);
+    mymap.on('click', function(e) {
+           L.marker([e.latlng.lat, e.latlng.lng]).addTo(mymap);
+
+        });
+    
+    
+    /*var heat = L.heatLayer(quakePoints, {radius: 100,
+                                    blur: 15, 
+                                    maxZoom: 17,
+                                    }).addTo(mymap);*/
+
+    
+    /******************* TOOLBAR STUFF **********************/
+    
+    var heat = L.heatLayer(quakePoints, {radius: 20,
+                                    blur: 20, 
+                                    maxZoom: 17,
+                                    gradient: {
+                                      0.2: '#ffffb2',
+                                      0.4: '#fd8d3c',
+                                      0.6: '#fd8d3c',
+                                      0.8: '#f03b20',
+                                      1: '#bd0026'
+                                      },
+                                    }).addTo(mymap);
+    
+    var MyCustomMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/marker-icon.png' %}"
+        }
+    });
+
+    var options = {
+        draw: {
+            polyline: false, 
+            polygon: false, 
+            circle: false, 
+            rectangle: false,
+            marker: false
+        },
+        edit: false
+    };
+
+    var drawControl = new L.Control.Draw(options);
+    mymap.addControl(drawControl);
+
+   mymap.on(L.Draw.Event.Created, function (e) {
+        var type = e.layerType,
+            layer = e.layer;
+
+        if (type === 'marker') {
+            layer.bindPopup('A popup!');
+            
+        }
+
+        drawnItems.addLayer(layer);
+    });
+    
+    //L.marker([14.597541234521131, 120.9778980910778]).addTo(mymap);
+    
+    
+    
+    </script>
+
+
+
+
+  </body>
+</html>
