@@ -96,7 +96,7 @@
         <div class="body-content row">
             <div class="row file-title-row">
                 <form class="input-field col s6 input-file-name">
-                    <input type="text" style = "border-bottom: 0 !important;" value="Amenities-Valenzuela">
+                    <input type="text" style = "border-bottom: 0 !important;" value="LandUse-Valenzuela">
                 </form>
                 <!--div class="right col s1">&nbsp;</div-->
                 <a class="light-green btn right col s1" style="font-size: 12px !important; margin-left:18px !important;">Save</a>
@@ -117,33 +117,33 @@
                         <table class = "left-summary-table bordered col s10">
                             <thead>
                               <tr>
-                                  <th data-field="id">Total Amenities</th>
+                                  <th data-field="id">Total Land Use</th>
                                   <th data-field="name">123,456</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Sustenance</td>
+                                <td>Residential</td>
                                 <td>89,103</td>
                               </tr>
                               <tr>
-                                <td>Education</td>
+                                <td>Commercial</td>
                                 <td>1,702</td>
                               </tr>
                               <tr>
-                                <td>Transport</td>
+                                <td>Parks</td>
                                 <td>999</td>
                               </tr>
                               <tr>
-                                <td>Healthcare</td>
+                                <td>Industrial</td>
                                 <td>20,123</td>
                               </tr>
                                 <tr>
-                                <td>Finance</td>
+                                <td>Agriculture</td>
                                 <td>1,702</td>
                               </tr>
                               <tr>
-                                <td>Commerce</td>
+                                <td>Utilities</td>
                                 <td>999</td>
                               </tr>
                               <tr>
@@ -169,33 +169,33 @@
                         <table class = "left-summary-table bordered col s10">
                             <thead>
                               <tr>
-                                  <th data-field="id">Total Amenities</th>
+                                  <th data-field="id">Total Land Use</th>
                                   <th data-field="name">123,456</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Sustenance</td>
+                                <td>Residential</td>
                                 <td>89,103</td>
                               </tr>
                               <tr>
-                                <td>Education</td>
+                                <td>Commercial</td>
                                 <td>1,702</td>
                               </tr>
                               <tr>
-                                <td>Transport</td>
+                                <td>Parks</td>
                                 <td>999</td>
                               </tr>
                               <tr>
-                                <td>Healthcare</td>
+                                <td>Industrial</td>
                                 <td>20,123</td>
                               </tr>
                                 <tr>
-                                <td>Finance</td>
+                                <td>Agriculture</td>
                                 <td>1,702</td>
                               </tr>
                               <tr>
-                                <td>Commerce</td>
+                                <td>Utilities</td>
                                 <td>999</td>
                               </tr>
                               <tr>
@@ -228,12 +228,12 @@
                                     &nbsp;
                                 </div>
                                 <select id = "a-type" class="browser-default select-side col s10">
-                                    <option value="1" disabled selected>Sustenance</option>
-                                    <option value="2">Education</option>
-                                    <option value="3">Transport</option>
-                                    <option value="4">Healthcare</option>
-                                    <option value="5">Finance</option>
-                                    <option value="6">Commerce</option>
+                                    <option value="1" disabled selected>Residential</option>
+                                    <option value="2">Commercial</option>
+                                    <option value="3">Parks</option>
+                                    <option value="4">Industrial</option>
+                                    <option value="5">Agriculture</option>
+                                    <option value="6">Utilities</option>
                                     <option value="7">Others</option>
                                 </select>
                             </div>
@@ -244,7 +244,7 @@
                                     &nbsp;
                                 </div>
                                 <div class="col s10 field-label">
-                                    Amenity Name
+                                    Land Use Name
                                 </div>
                             </div>
                             
@@ -263,7 +263,7 @@
                                     &nbsp;
                                 </div>
                                 <div class="col s10 field-label">
-                                    Latitude
+                                    Center Latitude
                                 </div>
                             </div>
                             
@@ -282,7 +282,7 @@
                                     &nbsp;
                                 </div>
                                 <div class="col s10 field-label">
-                                    Longitude
+                                    Center Longitude
                                 </div>
                             </div>
                             
@@ -314,6 +314,25 @@
                                 </div>
                             </div>
                         </div>
+                         <div class="row field-element">
+                            <div class="row">
+                                <div class="col s1">
+                                    &nbsp;
+                                </div>
+                                <div class="col s10 field-label">
+                                    Area in sqm.
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col s1">
+                                    &nbsp;
+                                </div>
+                                <div class="input-field col s10">
+                                    <input id="a-area" type="text" class="input-textfld validate">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row" style="margin-top:20px;">
                         <a class="green btn col s12" style="font-size: 14px !important;" onclick="save();">Save</a>
@@ -322,78 +341,7 @@
                         <a class="red btn col s12" style="font-size: 14px !important;">Remove</a>
                     </div>
                 </div>
-            </div>
-            
-
-            <!--div class = "side-nav-bg col s2" style="padding:0 !important;margin:0 !important;">
-                <!--form class = "row font-ten">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">search</i>
-                        <input id="icon_search" type="text" class="validate">
-                        <label for="icon_search">Search</label>
-                    </div>
-                </form-->
-                <!--form class = "row">
-                    <div class="row">
-                        <div class = "right cancel-editing-button">X</div>
-                    </div>
-                    <div class="row content-fields">
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Type
-                            </div>
-                            <div class="row input-field col s12">
-                                <select id = "type-select" class="browser-default select-side">
-                                    <option value="1" disabled selected>Restaurant</option>
-                                    <option value="2">Grocery</option>
-                                    <option value="3">Household</option>
-                                    <option value="4">Cafe</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Amenity Name
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="Jollibee">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Latitude
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="105.234">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Longitude
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="25.109">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Maximum Capacity
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="200">
-                            </div>
-                        </div>
-                            <!--div class="row input-field col s12">
-                                <input placeholder="Amenity Name" id="first_name" type="text" class="input-textfld validate" value="Jollibee">
-                                <label class = "input-label" for="first_name">Amenity Name</label>
-                            </div>
-                    </div>
-                    <div class="row" style="margin-top:20px;">
-                        <a class="red btn col s12" style="font-size: 14px !important;">Remove</a>
-                    </div>
-                </form>
-            </div-->
-            
+            </div>            
             <div id="mapid" class="col s10 main-bg"></div>
         </div>
                 
@@ -411,10 +359,13 @@
     <script>
         
         
-        var markers = {}; //will contain the amenities
+        var LUs = {}; //will contain the amenities
         var names = {}; //will contain the amenities
         var capacities = {}; //will contain the amenities
-        var types = {}; //will contain the amenity types
+        var LUlatlngs = {}; //will contain the latlngs of a landuse
+        var areas = {}; //will contain the areas of a landuse
+        var types = {}; //will contain the type of a landuse
+
         
         function copyToClipboard(text) {
           window.prompt("Copy Lat/Long values to clipboard: Ctrl+C, Enter", text);
@@ -428,7 +379,9 @@
             //save shit here
             names["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-name').value;
             capacities["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-capacity').value;
+             areas["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-area').value;
             types["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-type').options[document.getElementById('a-type').selectedIndex].value;
+            
             
             document.getElementById('init-div').innerHTML = document.getElementById('summary-div').innerHTML;            
         }
@@ -453,26 +406,23 @@
     var editableLayers = new L.FeatureGroup();
     map.addLayer(editableLayers);
 
-    var MyCustomMarker = L.Icon.extend({
-        options: {
-            shadowUrl: null,
-            iconAnchor: new L.Point(12, 12),
-            iconSize: new L.Point(24, 24),
-            iconUrl: "{% static 'leaflet/images/marker-icon.png' %}"
-        }
-    });
-
     var options = {
         //position: 'topright',
         draw: {
             polyline: false,
-            polygon: false,
+            polygon: {
+                allowIntersection: false, // false estricts shapes to simple polygons
+                drawError: {
+                    color: '#e1e100', // Color the shape will turn when intersects
+                    //message: '<strong>Oh snap!<strong> you can\'t draw that!' // Message that will show when intersect
+                },
+                shapeOptions: {
+                    color: '#bada55'
+                }
+            },
             circle: false, 
             rectangle: false,
-            marker: {
-                icon: new MyCustomMarker()
-                //add more marker stuff here
-            }
+            marker: false,
         },
         edit: false/*{
             featureGroup: editableLayers, //REQUIRED!!
@@ -486,33 +436,33 @@
     map.on('draw:created', function (e) {
         var type = e.layerType,
             layer = e.layer;
+        editableLayers.addLayer(layer);
         
         document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
-        document.getElementById('a-lat').value = layer.getLatLng().lat;
-        document.getElementById('a-long').value = layer.getLatLng().lng;
-        markers["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().long+")"] = e;
-        //names[layer.getLatLng()] = document.getElementById('a-name').value;
-        //capacities[layer.getLatLng()] = document.getElementById('a-capacity').value;
-        //document.getElementById('a-capacity').value = capacities[layer.getLatLng()];
-        //document.getElementById('a-name').value = names[layer.getLatLng()];
-
-        if (type === 'marker') {
-            layer.bindPopup(layer.getLatLng().toString()).openPopup();
+        document.getElementById('a-lat').value = layer.getBounds().getCenter().lat;
+        document.getElementById('a-long').value = layer.getBounds().getCenter().lng;
+        document.getElementById('a-area').value = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
+        
+        LUs["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"] = e;
+        areas["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"] = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);        
+        
+        if (type === 'polygon') {
+            //layer.bindPopup(layer.getBounds().getCenter().toString()).openPopup();
+            //layer.bindPopup(latlngshere[0].lat).openPopup();
             layer.on('click', function () {
                 //Write code to adjust the icon
                 //layer.icon = someNewIcon;
 
                 //Store a ref. to the menu item, and use that ref here to manage the view state
                 document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
-                document.getElementById('a-lat').value = layer.getLatLng().lat;
-                document.getElementById('a-long').value = layer.getLatLng().lng;
-                document.getElementById('a-capacity').value = capacities["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"];
-                document.getElementById('a-name').value = names["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"];
-                document.getElementById('a-type').selectedIndex=types["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"]-1;
+                document.getElementById('a-lat').value = layer.getBounds().getCenter().lat;
+                document.getElementById('a-long').value = layer.getBounds().getCenter().lng;
+                document.getElementById('a-capacity').value = capacities["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"];
+                document.getElementById('a-name').value = names["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"];
+                document.getElementById('a-area').value = areas["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"];
+                document.getElementById('a-type').selectedIndex=types["LatLng("+layer.getBounds().getCenter().lat +", "+ layer.getBounds().getCenter().lng+")"]-1;
             });
         }
-
-        editableLayers.addLayer(layer);
     });
     
         
