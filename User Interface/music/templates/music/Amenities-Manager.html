@@ -228,7 +228,7 @@
                                     &nbsp;
                                 </div>
                                 <select id = "a-type" class="browser-default select-side col s10">
-                                    <option value="1" disabled selected>Sustenance</option>
+                                    <option value="1" selected>Sustenance</option>
                                     <option value="2">Education</option>
                                     <option value="3">Transport</option>
                                     <option value="4">Healthcare</option>
@@ -324,76 +324,6 @@
                 </div>
             </div>
             
-
-            <!--div class = "side-nav-bg col s2" style="padding:0 !important;margin:0 !important;">
-                <!--form class = "row font-ten">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">search</i>
-                        <input id="icon_search" type="text" class="validate">
-                        <label for="icon_search">Search</label>
-                    </div>
-                </form-->
-                <!--form class = "row">
-                    <div class="row">
-                        <div class = "right cancel-editing-button">X</div>
-                    </div>
-                    <div class="row content-fields">
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Type
-                            </div>
-                            <div class="row input-field col s12">
-                                <select id = "type-select" class="browser-default select-side">
-                                    <option value="1" disabled selected>Restaurant</option>
-                                    <option value="2">Grocery</option>
-                                    <option value="3">Household</option>
-                                    <option value="4">Cafe</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Amenity Name
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="Jollibee">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Latitude
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="105.234">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Longitude
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="25.109">
-                            </div>
-                        </div>
-                        <div class="row field-element">
-                            <div class="row field-label col s12">
-                                Maximum Capacity
-                            </div>
-                            <div class="row input-field col s12">
-                                <input placeholder="Amenity Name" type="text" class="input-textfld validate" value="200">
-                            </div>
-                        </div>
-                            <!--div class="row input-field col s12">
-                                <input placeholder="Amenity Name" id="first_name" type="text" class="input-textfld validate" value="Jollibee">
-                                <label class = "input-label" for="first_name">Amenity Name</label>
-                            </div>
-                    </div>
-                    <div class="row" style="margin-top:20px;">
-                        <a class="red btn col s12" style="font-size: 14px !important;">Remove</a>
-                    </div>
-                </form>
-            </div-->
-            
             <div id="mapid" class="col s10 main-bg"></div>
         </div>
                 
@@ -430,6 +360,19 @@
             capacities["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-capacity').value;
             types["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"] = document.getElementById('a-type').options[document.getElementById('a-type').selectedIndex].value;
             
+            switch(document.getElementById('a-type').options[document.getElementById('a-type').selectedIndex].value)
+            {
+                case "1": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new SustenanceMarker); break;
+                case "2": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new EducationMarker); break;
+                case "3": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new TransportMarker); break;
+                case "4": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new HealthcareMarker); break;
+                case "5": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new FinanceMarker); break;
+                case "6": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new CommerceMarker); break;
+                case "7": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new OtherMarker); break;
+            }
+                
+           // markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(selectedIcon);
+            
             document.getElementById('init-div').innerHTML = document.getElementById('summary-div').innerHTML;            
         }
         
@@ -453,7 +396,7 @@
     var editableLayers = new L.FeatureGroup();
     map.addLayer(editableLayers);
 
-    var MyCustomMarker = L.Icon.extend({
+    var OtherMarker = L.Icon.extend({
         options: {
             shadowUrl: null,
             iconAnchor: new L.Point(12, 12),
@@ -462,6 +405,61 @@
         }
     });
 
+    var SustenanceMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_sustenance.png' %}"
+        }
+    });
+
+    var EducationMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_education.png' %}"
+        }
+    });
+
+    var TransportMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_transportation.png' %}"
+        }
+    });
+
+    var HealthcareMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_healthcare.png' %}"
+        }
+    });
+
+    var FinanceMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_finance.png' %}"
+        }
+    });
+
+    var CommerceMarker = L.Icon.extend({
+        options: {
+            shadowUrl: null,
+            iconAnchor: new L.Point(12, 12),
+            iconSize: new L.Point(24, 24),
+            iconUrl: "{% static 'leaflet/images/amenity_commerce.png' %}"
+        }
+    });
+    
+        
     var options = {
         //position: 'topright',
         draw: {
@@ -470,7 +468,7 @@
             circle: false, 
             rectangle: false,
             marker: {
-                icon: new MyCustomMarker()
+                icon: new SustenanceMarker()
                 //add more marker stuff here
             }
         },
@@ -490,14 +488,10 @@
         document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
         document.getElementById('a-lat').value = layer.getLatLng().lat;
         document.getElementById('a-long').value = layer.getLatLng().lng;
-        markers["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().long+")"] = e;
-        //names[layer.getLatLng()] = document.getElementById('a-name').value;
-        //capacities[layer.getLatLng()] = document.getElementById('a-capacity').value;
-        //document.getElementById('a-capacity').value = capacities[layer.getLatLng()];
-        //document.getElementById('a-name').value = names[layer.getLatLng()];
+        markers["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"] = e.layer;
 
         if (type === 'marker') {
-            layer.bindPopup(layer.getLatLng().toString()).openPopup();
+            //layer.bindPopup(layer.getLatLng().toString()).openPopup();
             layer.on('click', function () {
                 //Write code to adjust the icon
                 //layer.icon = someNewIcon;
