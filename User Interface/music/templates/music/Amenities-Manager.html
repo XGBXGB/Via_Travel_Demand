@@ -370,9 +370,14 @@
                 case "6": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new CommerceMarker); break;
                 case "7": markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(new OtherMarker); break;
             }
-                
-           // markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].setIcon(selectedIcon);
-            
+                    
+            markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].feature.properties.latitude = document.getElementById("a-lat").value;
+            markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].feature.properties.longitude = document.getElementById("a-long").value;
+            markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].feature.properties.amenity_type = document.getElementById("a-type").value-1;
+            markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].feature.properties.capacity = document.getElementById("a-capacity").value;
+            markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].feature.properties.name = document.getElementById("a-name").value;
+            var toGeojson = markers["LatLng("+document.getElementById('a-lat').value +", "+ document.getElementById('a-long').value+")"].toGeoJSON();
+            //alert(JSON.stringify(toGeojson));
             document.getElementById('init-div').innerHTML = document.getElementById('summary-div').innerHTML;            
         }
         
@@ -461,7 +466,6 @@
     
         
     var options = {
-        //position: 'topright',
         draw: {
             polyline: false,
             polygon: false,
@@ -469,7 +473,6 @@
             rectangle: false,
             marker: {
                 icon: new SustenanceMarker()
-                //add more marker stuff here
             }
         },
         edit: false/*{
@@ -483,20 +486,29 @@
 
     map.on('draw:created', function (e) {
         var type = e.layerType,
-            layer = e.layer;
+            layer = e.layer,
+            feature = layer.feature = layer.feature || {},
+            props = feature.properties = feature.properties || {};
         
         document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
         document.getElementById('a-lat').value = layer.getLatLng().lat;
         document.getElementById('a-long').value = layer.getLatLng().lng;
         markers["LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")"] = e.layer;
+        
+        document.getElementById('a-capacity').value = 0;
+        document.getElementById('a-name').value = "No name";
+
+        feature.type = "Feature";
+        feature.amenity_id = "LatLng("+layer.getLatLng().lat +", "+ layer.getLatLng().lng+")";
+        props.latitude = document.getElementById("a-lat").value;
+        props.longitude = document.getElementById("a-long").value;
+        props.amenity_type = document.getElementById("a-type").value-1;
+        props.capacity = document.getElementById("a-capacity").value;
+        props.name = document.getElementById("a-name").value;
+        var toGeojson = layer.toGeoJSON();
 
         if (type === 'marker') {
-            //layer.bindPopup(layer.getLatLng().toString()).openPopup();
             layer.on('click', function () {
-                //Write code to adjust the icon
-                //layer.icon = someNewIcon;
-
-                //Store a ref. to the menu item, and use that ref here to manage the view state
                 document.getElementById('init-div').innerHTML =  document.getElementById('edit-div').innerHTML;
                 document.getElementById('a-lat').value = layer.getLatLng().lat;
                 document.getElementById('a-long').value = layer.getLatLng().lng;
@@ -509,15 +521,6 @@
         editableLayers.addLayer(layer);
     });
     
-        
-    /*marker.on('mouseover', function () {
-        //Write code to adjust the icon
-        marker.icon = someNewIcon;
-
-        //Store a ref. to the menu item, and use that ref here to manage the view state
-        currentActive.removeClass('active');
-        $(this.target).addClass('active');
-    });*/
     </script>
 
 
